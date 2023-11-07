@@ -45,3 +45,16 @@ The above process repeats continuously.
 - q: A classic queue implementation.
 - q_node: A node in the q class containing necessary elements like socket and file (fpath).
 - fpath: A comprehensive class holding directory and subdirectory details, forming a tree structure.
+
+## Auxiliary Functions (aux.cpp/h)
+Contains all helper functions used by the client and server, fully commented.
+
+Two key functions are highlighted: get_file() and send_file():
+
+- get_file(): Reads a file from a path, creates a new file, and writes data to it in block_size chunks from the socket.
+- send_file(): Sends a file to the client in block_size chunks, providing the file size initially.
+
+## Compilation and Sample Execution Commands:
+Compile the programs with make.
+
+Example execution:
