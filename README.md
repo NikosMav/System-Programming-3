@@ -71,3 +71,7 @@ When the client downloads files, a "results" directory is created to store them 
 A testing program has been created to test multi-client functionality. It creates 10 clients through fork connecting to the server.
 
 To use the testing program, compile with g++ test.cpp and run ./a.out while the SERVER IS RUNNING ON THE LOCAL MACHINE!
+
+## License
+
+This project is for educational use only and is part of the coursework for _Κ24 System Programming_ at _DiT, NKUA_.
