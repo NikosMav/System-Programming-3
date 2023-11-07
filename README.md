@@ -12,6 +12,7 @@ SERVER
 5. Enters an infinite loop, accepting new connections and creating new communication threads that read the requested files and place them in a custom queue.
 
 COMMUNICATION THREAD
+
 When the server accepts a new connection, it creates a new communication thread:
 1. Sends the block_size to the client and receives the requested path.
 2. Uses a custom fpath class to create a structure of file information (path, whether it's a folder, name, etc.) without storing file data.
@@ -20,6 +21,7 @@ When the server accepts a new connection, it creates a new communication thread:
 5. Adds q_nodes to the queue, which activates workers via mutexes to start serving clients.
 
 WORKER THREAD
+
 Worker threads wait in an endless loop for a node to enter the shared queue. Once activated:
 1. Takes control of the queue with mutexes.
 2. Retrieves the first element from the queue.
