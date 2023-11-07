@@ -30,3 +30,18 @@ Worker threads wait in an endless loop for a node to enter the shared queue. Onc
 7. Increments the 'files served' counter and closes the connection when all files are served.
 
 The above process repeats continuously.
+
+### Client Operation
+#### The client:
+
+1. Reads command-line arguments.
+2. Attempts to connect to the server.
+3. Receives the block_size from the server.
+4. Sends the desired path to the server.
+5. Continuously reads files until the server has sent all.
+6. Closes the connection.
+
+#### Classes
+- q: A classic queue implementation.
+- q_node: A node in the q class containing necessary elements like socket and file (fpath).
+- fpath: A comprehensive class holding directory and subdirectory details, forming a tree structure.
