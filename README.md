@@ -58,3 +58,16 @@ Two key functions are highlighted: get_file() and send_file():
 Compile the programs with make.
 
 Example execution:
+```bash
+./dataServer -p 8080 -s 20 -q 10 -b 512
+./remoteClient -p 8080 -i 127.0.0.1 -d from/dir
+```
+
+Note: The PATH of the directory should not start with "./" or "/", but directly with the name, e.g., "from/dir".
+
+When the client downloads files, a "results" directory is created to store them to avoid overwriting existing files when running the server and client from the same directory.
+
+## Prerequisite
+A testing program has been created to test multi-client functionality. It creates 10 clients through fork connecting to the server.
+
+To use the testing program, compile with g++ test.cpp and run ./a.out while the SERVER IS RUNNING ON THE LOCAL MACHINE!
